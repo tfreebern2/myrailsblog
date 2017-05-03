@@ -70,3 +70,24 @@ p {
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
 }
+
+.share-box {
+  text-align: center !important;
+  p {
+    padding: 0 0 1em 0;
+    margin: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: .8em;
+  }
+  i {
+    padding: 1em 1.5em;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.fa {
+  text-align: center;
+}
