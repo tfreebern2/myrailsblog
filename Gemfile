@@ -22,6 +22,7 @@ gem 'redcarpet'
 gem 'simple_form'
 # Misc Gems
 gem 'friendly_id', '~> 5.1'
+gem 'will_paginate', '~> 3.1', '>= 3.1.5'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
