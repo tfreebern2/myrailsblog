@@ -5,20 +5,21 @@
     <br />
   <div class="text-center post-title"><h2><%= @post.title %></h2></div>
     <br />
-    <hr>
+    <hr class="center-block">
   <p class="post-content"><%= markdown @post.content %></p>
-    <hr>
+    <br />
+    <br />
+    <hr class="center-block">
       <div id="col-xs-12 col-sm-3 share-box">
-        <h4 class="text-center">Share '<%= @post.title %>'!</h4>
+        <h4 class="text-center"><i>Share and Comment on</i> <b><%= @post.title %>!</b></h4>
         <br />
-        <a onclick="javascript:window.open('http://twitter.com/intent/tweet?text=<%= @post.title %> by @twitterhandle - &amp;url=<%=url_for(post_url(@post)) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);">
+        <!-- <a onclick="javascript:window.open('http://twitter.com/intent/tweet?text=<%= @post.title %> by @twitterhandle - &amp;url=<%=url_for(post_url(@post)) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);">
             <i class="fa fa-twitter center-block"></i>
         </a>
-        <!-- <a onclick="javascript:window.open('http://www.facebook.com/sharer.php?u=<%= url_for(post_url(@post)) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-facebook"></i></a> -->
-        <a onclick="javascript:window.open('https://plus.google.com/share?url=<%= url_for(post_url(@post)) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-google-plus center-block"></i></a>
+        <a onclick="javascript:window.open('http://www.facebook.com/sharer.php?u=<%= url_for(post_url(@post)) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-facebook"></i></a>
+        <a onclick="javascript:window.open('https://plus.google.com/share?url=<%= url_for(post_url(@post)) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-google-plus center-block"></i></a> -->
         
       </div>
-    <hr>
     <br />
     <br />
   <%= render 'disqus' %>
