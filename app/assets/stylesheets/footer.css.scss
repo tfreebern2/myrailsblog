@@ -1,0 +1,66 @@
+$footer-height: 100px;
+$footer-height-mobile: 200px;
+@media (max-width: 750px) {
+  #footer {
+    height:$footer-height-mobile;
+  }
+
+  #wrap {
+    margin: 0 auto -$footer-height-mobile;
+    /* Pad bottom by footer height */
+    padding: 0 0 $footer-height-mobile;
+  }
+
+  #footer .social {
+    margin-top:10px;
+  }
+
+}
+
+html {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  flex: 1;
+  
+  /* Negative indent footer by its height */
+  margin: 0 auto -$footer-height;
+
+  /* Pad bottom by footer height */
+  padding: 0 0 $footer-height;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  height: $footer-height;
+  color: white;
+  background-color: #2f2f2f;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  padding: 15px 0px;
+  margin-top:30px;
+  font-weight:100;
+}
+
+#footer a {
+  color: white;
+  font-weight: 700;
+}
+
+.social-button {
+  width: 32px;
+  margin: 4px;
+}
+
+.social a:hover {
+  text-decoration:none;
+}
