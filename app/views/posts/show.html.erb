@@ -6,7 +6,7 @@
   <div class="text-center post-title"><h2><%= @post.title %></h2></div>
     <br />
     <hr>
-  <p class="post-content"><%= simple_format @post.content %></p>
+  <p class="post-content"><%= markdown @post.content %></p>
     <hr>
       <div id="col-xs-12 col-sm-3 share-box">
         <h4 class="text-center">Share '<%= @post.title %>'!</h4>
