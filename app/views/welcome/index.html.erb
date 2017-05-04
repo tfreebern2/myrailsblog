@@ -4,12 +4,11 @@
   <div class="row">
     <div class="col-sm-12">
       <h1>Stuff I've Written</h1>
-      <hr>
+      <hr class="center-block">
       <% @posts.each do |post|%>
         <h3><%= link_to post.title, post %></h3>
         <p class='blog-date'><%= post.created_at.strftime("%A, %b %d") %></p>
-        <br />
-        <br />
+        <hr class="center-block">
       <% end %>
       <%= will_paginate @posts %>
     </div>
