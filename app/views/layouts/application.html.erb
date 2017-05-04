@@ -25,8 +25,16 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
               <li>
+                <%= link_to "Contact", new_contact_path %>
+              </li>
+              <li>
                 <%= link_to 'https://tfreebern2.github.io', target: :blank do %>
                   Portfolio
+                <% end %>
+              </li>
+              <li>  
+                <% if user_signed_in? %>
+                  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
                 <% end %>
               </li>
             </ul>
