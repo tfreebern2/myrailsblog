@@ -1,3 +1,12 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 100px;
+}
+
 .clr {
   clear:both;
 }
@@ -30,9 +39,18 @@ body {
   border-radius: 0;
 }
 
+@media (min-width: 768px) { .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+  margin-left: -15px;
+} }
+
+@media (max-width: 768px) { .navbar-brand {
+  visibility: hidden;
+}}
+
 .navbar-brand {
   font-family: 'Lato', sans-serif;
   font-size: 38px !important;
+  float: left !important;
   color: white !important;
   padding: 0 30px;
   letter-spacing: 1px;
@@ -48,12 +66,18 @@ body {
   font-family: 'Lato', sans-serif !important;
 }
 
+@media (max-width: 768px) { .navbar-nav li a {
+  color: #bebdbd !important;
+  text-decoration: none !important;
+}}
+
 .post-date {
   color: #bebdbd !important;
   font-family: 'Raleway', sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 14px;
+  margin-top: 2em;
 }
 
 .post-title {
@@ -127,3 +151,6 @@ hr {
   }
 }
 
+.disqus {
+  margin: 100px 0;
+}

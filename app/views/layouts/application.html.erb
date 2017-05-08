@@ -7,7 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -15,72 +15,66 @@
   </head>
 
   <body>
-    <div id="wrap">
-      <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-        <div class="container-fluid">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <%= link_to 'Home', root_path, class: 'navbar-brand' %>
-          </div>
-
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-              <li>
-                <%= link_to "Contact", new_contact_path %>
-              </li>
-              <li>
-                <%= link_to 'https://tfreebern2.github.io', target: :blank do %>
-                  Portfolio
-                <% end %>
-              </li>
-              <li>  
-                <% if user_signed_in? %>
-                  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-                <% end %>
-              </li>
-            </ul>
-          </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-      </nav>
+     <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand">Tim Freebern II</div>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav pull-right">
+            <li class="active"><%= link_to 'Home', root_path %></li>
+            <li><a href="https://tfreebern2.github.io">Portfolio</a></li>
+            <li><%= link_to "Contact", new_contact_path %></li>
+            <li>  
+              <% if user_signed_in? %>
+                <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+              <% end %>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
       
       <% if notice %>
         <p class="notice"><%= notice %></p>
       <% elsif alert %>
         <p class="alert"><%= alert %></p>
       <% end %>
+    <br />
+    <br />
+    <div class="container">
+    
+        <%= yield %>
       
-    <%= yield %>
+    </div>
+    
 
-    </div><!-- End of Wrap -->
-
-    <br class="clr" />
+    
 
     <!-- Footer -->
-      <div id="footer">
+      <footer class="footer">
         <div class="container">
-          <div class="col-xs-12 col-sm-3">
-            <b>Contact</b>
+          <b>Social</b>
             <br />
-            tfreebern2@gmail.com
-              
-          </div>
-          <div class="col-xs-12 col-sm-3 social pull-right">
-            <b>Social</b>
-              <br />
-              <br />
-              <%= link_to 'http://github.com/tfreebern2', target: :blank do %>
-                <%= image_tag 'github.png', class: 'social-button' %>
-              <% end %>
-              <%= link_to 'http://www.facebook.com/public/Tim-Freebern-II', target: :blank do %>
-                <%= image_tag 'facebook.png', class: 'social-button' %>
-              <% end %>
-              <%= link_to 'http://twitter.com/TFreebern2', target: :blank do %>
-                <%= image_tag 'twitter.png', class: 'social-button' %>
-              <% end %>
-          </div>
+            <br />
+            <%= link_to 'http://github.com/tfreebern2', target: :blank do %>
+              <%= image_tag 'github.png', class: 'social-button' %>
+            <% end %>
+            <%= link_to 'http://www.facebook.com/public/Tim-Freebern-II', target: :blank do %>
+              <%= image_tag 'facebook.png', class: 'social-button' %>
+            <% end %>
+            <%= link_to 'http://twitter.com/TFreebern2', target: :blank do %>
+              <%= image_tag 'twitter.png', class: 'social-button' %>
+            <% end %>
         </div>
-      </div>
+      </footer>
   
 
   </body>
