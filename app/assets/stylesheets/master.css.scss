@@ -71,6 +71,10 @@ body {
   text-decoration: none !important;
 }}
 
+@media (min-width: 768px) { .navbar-nav li a {
+  background: transparent !important;
+}}
+
 .post-date {
   color: #bebdbd !important;
   font-family: 'Raleway', sans-serif;
